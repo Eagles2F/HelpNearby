@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cmu.helpnearby.nearby" >
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".HelpNearbyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".HelpNearbyApplication"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-
-        <meta-data android:name="com.google.android.gms.nearby.connection.SERVICE_ID"
+        <meta-data
+            android:name="com.google.android.gms.nearby.connection.SERVICE_ID"
             android:value="@string/service_id" />
         <meta-data
             android:name="com.google.android.nearby.messages.API_KEY"
@@ -30,6 +32,16 @@
         <activity android:name=".OfferHelpActivity" >
         </activity>
         <activity android:name=".ChooseActivity" >
+        </activity>
+        <activity android:name=".ChatActivity">
+        </activity>
+
+        <service
+            android:name=".AdvertisingService"
+            android:exported="false" >
+        </service>
+
+        <activity android:name=".HelperListActivity" >
         </activity>
     </application>
 

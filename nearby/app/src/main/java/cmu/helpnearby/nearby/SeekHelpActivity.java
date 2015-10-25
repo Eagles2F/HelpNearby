@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
@@ -17,6 +16,8 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.nearby.Nearby;
 import com.google.android.gms.nearby.connection.Connections;
 import com.google.android.gms.nearby.connection.ConnectionsStatusCodes;
+
+import cmu.helpnearby.nearby.Model.User;
 
 public class SeekHelpActivity extends AppCompatActivity
         implements GoogleApiClient.ConnectionCallbacks,
@@ -142,6 +143,7 @@ public class SeekHelpActivity extends AppCompatActivity
         Log.d("evan", "deviceid:" + deviceId);
         Log.d("evan", "found endpoint:" + endpointId);
         Log.d("evan", "found endpoint name:" + endpointName);
+        startActivity(HelperListActivity.createIntent(getApplicationContext()));
     }
 
     @Override

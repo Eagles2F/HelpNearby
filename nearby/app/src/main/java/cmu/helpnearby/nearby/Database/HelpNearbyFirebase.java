@@ -8,5 +8,4 @@ import com.firebase.client.Firebase;
 public class HelpNearbyFirebase {
     public static final Firebase rootFirebase = new Firebase("https://helpnearby.firebaseio.com/");
     public static final Firebase usersFirebase = new Firebase("https://helpnearby.firebaseio.com/users");
-    public static final Firebase questionFirebase = new Firebase("https://helpnearby.firebaseio.com/questions");
 }

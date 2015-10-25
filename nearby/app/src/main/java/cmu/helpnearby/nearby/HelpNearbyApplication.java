@@ -2,6 +2,7 @@ package cmu.helpnearby.nearby;
 
 import android.app.Application;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.firebase.client.Firebase;
 
 /**
@@ -13,5 +14,7 @@ public class HelpNearbyApplication extends Application {
         super.onCreate();
         //set up firebase
         Firebase.setAndroidContext(this);
+        //set up Fresco
+        Fresco.initialize(this);
     }
 }

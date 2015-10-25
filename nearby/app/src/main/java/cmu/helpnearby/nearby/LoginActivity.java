@@ -1,12 +1,10 @@
 package cmu.helpnearby.nearby;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.provider.Settings;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -146,7 +144,7 @@ public class LoginActivity extends ActionBarActivity {
                 Session.getInstance().setmCurrentUser(mUser);
                 //getting unique id for device
                 String uid = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-                mUser.setmDeviceId(uid);
+                mUser.setmAndroidId(uid);
                 //check this user has registered or not
                 checkUserRegistered();
             }

@@ -15,7 +15,7 @@ public class User {
     private String mHeadline;
     private String mPictureUrl;
     private boolean mVisible;
-    private String mDeviceId;
+    private String mAndroidId;
 
     private User() {
 
@@ -79,12 +79,12 @@ public class User {
         this.mVisible = mVisible;
     }
 
-    public String getmDeviceId() {
-        return mDeviceId;
+    public String getmAndroidId() {
+        return mAndroidId;
     }
 
-    public void setmDeviceId(String mDeviceId) {
-        this.mDeviceId = mDeviceId;
+    public void setmAndroidId(String mAndroidId) {
+        this.mAndroidId = mAndroidId;
     }
 
     public static User parse(JSONObject jsonObject) {
