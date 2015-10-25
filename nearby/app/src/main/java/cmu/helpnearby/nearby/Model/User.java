@@ -15,6 +15,7 @@ public class User {
     private String mHeadline;
     private String mPictureUrl;
     private boolean mVisible;
+    private String mDeviceId;
 
     private User() {
 
@@ -76,6 +77,14 @@ public class User {
 
     public void setmVisible(boolean mVisible) {
         this.mVisible = mVisible;
+    }
+
+    public String getmDeviceId() {
+        return mDeviceId;
+    }
+
+    public void setmDeviceId(String mDeviceId) {
+        this.mDeviceId = mDeviceId;
     }
 
     public static User parse(JSONObject jsonObject) {

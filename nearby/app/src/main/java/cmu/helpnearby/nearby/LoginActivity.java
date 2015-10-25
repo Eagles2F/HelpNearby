@@ -1,9 +1,12 @@
 package cmu.helpnearby.nearby;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.provider.Settings;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -111,7 +114,7 @@ public class LoginActivity extends ActionBarActivity {
                 } else {
                     //this user exists
                     Log.d("evan", "registered user");
-                    startActivity(MainActivity.createIntent(LoginActivity.this));
+                    startActivity(ChooseActivity.createIntent(LoginActivity.this));
                 }
             }
 
@@ -126,7 +129,7 @@ public class LoginActivity extends ActionBarActivity {
         if (mUser != null) {
             //write to backend database about this new user
             HelpNearbyFirebase.usersFirebase.child(mUser.getmId()).setValue(mUser);
-            startActivity(MainActivity.createIntent(LoginActivity.this));
+            startActivity(ChooseActivity.createIntent(LoginActivity.this));
         } else {
             Log.d("evan", "JSON parse error");
         }
@@ -141,6 +144,9 @@ public class LoginActivity extends ActionBarActivity {
                 //Success
                 mUser = User.parse(apiResponse.getResponseDataAsJson());
                 Session.getInstance().setmCurrentUser(mUser);
+                //getting unique id for device
+                String uid = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+                mUser.setmDeviceId(uid);
                 //check this user has registered or not
                 checkUserRegistered();
             }

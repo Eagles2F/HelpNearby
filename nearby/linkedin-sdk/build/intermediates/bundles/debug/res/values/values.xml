@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/evan/Repos/mailtime/nearby/linkedin-sdk/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/evan/Repos/mailtime/HelpNearby/nearby/linkedin-sdk/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="update_linkedin_app_cancel">Cancel</string>
     <string name="update_linkedin_app_download">Download</string>
